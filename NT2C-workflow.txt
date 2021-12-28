@@ -1,0 +1,9 @@
+1. noise extraction
+（1）coarse denoiser training
+（2）noise locating 
+python3 extract_noise_std_crop320.py initial_denoised_micrograph_path raw_micrograph_path noise_patches_path draw_noise_path
+（3）GAN_noise_synthesizer
+CUDA_VISIBLE_DEVICES=2 python3 main_savemrc_128.py --dataset custom --batch_size 64 --model WGAN-GP --dataroot noise_path --cuda True
+2. noise re-weighting
+python3 add_norm_noise_320.py clean_singal_path noise_path noisy_path reweighted_res_path
+3. Fine denoiser training

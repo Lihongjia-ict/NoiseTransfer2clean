@@ -1,0 +1,17 @@
+[I 09:27:37.753 NotebookApp] The port 8888 is already in use, trying another port.
+[I 09:27:37.753 NotebookApp] The port 8889 is already in use, trying another port.
+[I 09:27:37.753 NotebookApp] The port 8890 is already in use, trying another port.
+[I 09:27:37.753 NotebookApp] The port 8891 is already in use, trying another port.
+[I 09:27:37.753 NotebookApp] The port 8892 is already in use, trying another port.
+[I 09:27:37.788 NotebookApp] JupyterLab extension loaded from /home/lihongjia/software/anaconda3/lib/python3.7/site-packages/jupyterlab
+[I 09:27:37.788 NotebookApp] JupyterLab application directory is /home/lihongjia/software/anaconda3/share/jupyter/lab
+[I 09:27:37.791 NotebookApp] Serving notebooks from local directory: /data/lihongjia/denoise/noise2transfer_code/denoiser
+[I 09:27:37.791 NotebookApp] The Jupyter Notebook is running at:
+[I 09:27:37.791 NotebookApp] http://localhost:8989/?token=a8e54e1070e75aaeddd26518a2177201582c407a06962824
+[I 09:27:37.791 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 09:27:48.300 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8989/?token=a8e54e1070e75aaeddd26518a2177201582c407a06962824
+[I 09:28:07.534 NotebookApp] Accepting one-time-token-authenticated connection from 127.0.0.1

@@ -75,7 +75,8 @@ for clean_img in clean_list:
     print('k1,k2,b: {}, {}, {}'.format(k1,k2,b))
     noisy_gen=k1*clean+k2*(noise-np.mean(noise))+b+(noise-np.mean(noise))
     #noisy_gen = noisy_gen.reshape((640,640))
-    noisy_gen = noisy_gen.reshape((320,320))
+    #noisy_gen = noisy_gen.reshape((320,320))
+    noisy_gen = noisy_gen.reshape((256,256))
     fit_noisy_out=mrcfile.new(noisy_gen_dir+clean_img,overwrite=True)
     fit_noisy_out.set_data(noisy_gen.astype(np.float32))
 

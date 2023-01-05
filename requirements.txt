@@ -1,0 +1,12 @@
+tensorflow==2.5.0
+torch==1.8.1
+matplotlib
+numpy
+torchvision==0.9.1
+scipy
+scikit_learn
+mrcfile
+python-opencv
+pandas
+scikit-image
+mahotas

@@ -1,9 +1,21 @@
 1. noise extraction
-（1）coarse denoiser training
+（1）pre-process
+lowpass/coarse denoiser training
+gaussian: python3 gaussian_lp.py input_dir output_dir
+denoise: python3 denoise_cmd.py -a noisy_dir -b clean_dir --num-epochs 10 --batch-size 32 --crop 320 
+
 （2）noise locating 
 python3 extract_noise_std_crop320.py initial_denoised_micrograph_path raw_micrograph_path noise_patches_path draw_noise_path
+
 （3）GAN_noise_synthesizer
-CUDA_VISIBLE_DEVICES=2 python3 main_savemrc_128.py --dataset custom --batch_size 64 --model WGAN-GP --dataroot noise_path --cuda True
+Training: CUDA_VISIBLE_DEVICES=2 python3 main_savemrc_128.py --dataset custom --batch_size 64 --model WGAN-GP --dataroot noise_path --cuda True
+Test: CUDA_VISIBLE_DEVICES=2 python3 main_savemrc_128.py --dataset custom --batch_size 64 --model WGAN-GP --dataroot noise_path --cuda True --is_train False --load_D dis_path --load_G gen_path
+
 2. noise re-weighting
 python3 add_norm_noise_320.py clean_singal_path noise_path noisy_path reweighted_res_path
-3. Fine denoiser training
+
+3. Denoiser training
+python3 denoise_cmd.py -a noisy_dir -b clean_dir --num-epochs 10 --batch-size 32 --crop 320
+
+4. Use pretrained model
+python3 denoise_cmd.py input_dir --output output_dir -m pretrained-model -s 800 -p 128
